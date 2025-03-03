@@ -11,7 +11,7 @@ public class Utils {
     public static SentimentAnalysisPojo parseSentimentAnalysis(String input) {
         SentimentAnalysisPojo pojo = new SentimentAnalysisPojo();
 
-        Pattern sentimentPattern = Pattern.compile("Sentiment Analysis: (.+?)Explanation:");
+        Pattern sentimentPattern = Pattern.compile( "Sentiment Analysis:(.+?)" + "Explanation:", Pattern.DOTALL);
         Pattern explanationPattern = Pattern.compile("Explanation: (.+)", Pattern.DOTALL);
 
         Matcher sentimentMatcher = sentimentPattern.matcher(input);
